@@ -1,4 +1,5 @@
-import Login from './features/Login.tsx';
+
+import Login from "./features/Login";
 
 const App = () => {
   return (

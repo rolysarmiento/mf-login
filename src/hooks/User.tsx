@@ -1,39 +1,36 @@
 import { useState } from "react";
 
-export const User = () => {
-    const [username, setUsername] = useState<string>(''); 
+import type { ApiClinica } from '../../../mf-host/src/common/api/api-clinica';
 
+//import api from './mf_host/http_client'
+
+
+export const User = () => {
+
+    //const api: ApiClinica = new mf_host.ApiClinica()
+
+    const [username, setUsername] = useState<string>('');
+    const [password, setPassword] = useState<string>('123');
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUsername(e.target.value);
     };
-
     const handleClick = async () => {
+
         if (username !== '') {
-            localStorage.setItem('user', JSON.stringify(username));
+            // localStorage.setItem('user', JSON.stringify(username));
+            // try {
 
-            try {
-                const response = await fetch('http://localhost:10010/Auth/', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        username: username, 
-                    }),
-                });
+            //     const token = await api.login(username, password)
 
-                if (!response.ok) {
-                    throw new Error('Error en la autenticación');
-                }
+            //     console.log('Token recibido:', token);
 
-                const data = await response.json();
-                const token = data.rows.token;
-                console.log('Token recibido:', token);
+            //     localStorage.setItem('token', token);
 
-                localStorage.setItem('token', token);
-            } catch (error) {
-                console.error('Error:', error);
-            }
+            // } catch (error) {
+            //     console.error('Error:', error);
+            // }
+
+
         } else {
             console.error('El nombre de usuario no puede estar vacío');
         }

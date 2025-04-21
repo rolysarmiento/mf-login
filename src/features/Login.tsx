@@ -1,3 +1,5 @@
+// import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/js/bootstrap.min.js'
 import logo from '../assets/img/logo2.png'
 import { User } from '../hooks/User';
 import './Login.css';
@@ -8,6 +10,7 @@ export default function Login() {
 
   return (
     <>
+
       <div className="login-container">
         <div className="login-banner">
           <div className="banner-overlay"></div>
@@ -47,6 +50,7 @@ export default function Login() {
           </form>
         </div>
       </div>
+
     </>
   );
 }

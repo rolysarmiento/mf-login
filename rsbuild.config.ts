@@ -7,6 +7,12 @@ export default defineConfig({
     pluginReact(),
     pluginModuleFederation({
       name: 'mf_login',
+      remotes: {
+        mf_footer:
+          'mf_footer@http://localhost:3003/mf-manifest.json',
+        mf_host:
+          'mf_host@http://localhost:2000/mf-manifest.json',
+      },
       exposes: {
         './login': './src/features/Login.tsx',
       },
@@ -14,7 +20,7 @@ export default defineConfig({
     }),
   ],
   server: {
-    port: 3001,
+    port: 3000,
   },
-  
+
 });
